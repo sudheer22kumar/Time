@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "time"
+version = "0.1.0"
+description = ""
+authors = ["Sudheer Kumar P. <sudheer22kumar@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pytz = "^2025.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
