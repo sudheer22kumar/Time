@@ -2,7 +2,7 @@ import datetime as _dt
 import time as _time
 from dateutil import parser as _time_parser
 import pytz as _pytz
-from logger import logger
+from logger import loggers
 
 
 logger = logger.loggers()
