@@ -5,7 +5,7 @@ import pytz as _pytz
 from logger import loggers
 
 
-logger = logger.loggers()
+logger = loggers()
 
 
 class time_difference:
