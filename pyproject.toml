@@ -6,7 +6,7 @@ authors = ["Sudheer Kumar P. <sudheer22kumar@users.noreply.github.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.9"
 pytz = "^2025.2"
 logger = { path = "logger", develop = true }
 
