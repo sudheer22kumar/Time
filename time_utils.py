@@ -8,7 +8,7 @@ from logger import loggers
 logger = loggers()
 
 
-class time_difference:
+class TimeDifference:
     def __init__(self, timedelta):
         self.timedelta = timedelta
         self._minutes = self.timedelta.total_seconds() / 60.0
@@ -205,7 +205,7 @@ def get_time_diff(_date1=None, _date2=None, verbose=False):
         diff = _date1 - _date2
 
     return diff
-    # return time_difference(diff)
+    # return TimeDifference(diff)
 
 
 def isdate(date):
