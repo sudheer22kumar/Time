@@ -1,9 +1,9 @@
 import datetime as _dt
 import time as _time
-from dateutil import parser as _time_parser
-import pytz as _pytz
-from logger import loggers
 
+import pytz as _pytz
+from dateutil import parser as _time_parser
+from logger import loggers
 
 logger = loggers()
 
@@ -78,9 +78,7 @@ def get_date(_date=None, timezone=None, format_="HR", just_result=False):
         if not timezone:
             req_date = _time_parser.parse(_time.asctime(_time.localtime())).astimezone()
         else:
-            req_date = _time_parser.parse(_time.asctime(_time.localtime())).astimezone(
-                _pytz.timezone(timezone)
-            )
+            req_date = _time_parser.parse(_time.asctime(_time.localtime())).astimezone(_pytz.timezone(timezone))
     else:
         if isinstance(_date, _dt.datetime):
             _date = _date.strftime("%m/%d/%Y")
@@ -143,9 +141,7 @@ def get_time_diff(_date1=None, _date2=None, verbose=False):
             )
         _date1 = _date1.astimezone(_pytz.timezone("UTC"))
         if verbose:
-            logger["WARNING"].logger.warning(
-                "Converted 1st Date: {}".format(_date1.ctime())
-            )
+            logger["WARNING"].logger.warning("Converted 1st Date: {}".format(_date1.ctime()))
 
     elif "datetime" in str(type(_date1)):
         _date1 = _time_parser.parse(_date1.ctime())
@@ -157,14 +153,10 @@ def get_time_diff(_date1=None, _date2=None, verbose=False):
             )
         _date1 = _date1.astimezone(_pytz.timezone("UTC"))
         if verbose:
-            logger["WARNING"].logger.warning(
-                "Converted 1st Date: {}".format(_date1.ctime())
-            )
+            logger["WARNING"].logger.warning("Converted 1st Date: {}".format(_date1.ctime()))
 
     else:
-        logger["ERROR"].logger.error(
-            "Date should either be a <str> or <datetime> object. Please recheck!!"
-        )
+        logger["ERROR"].logger.error("Date should either be a <str> or <datetime> object. Please recheck!!")
 
     if isinstance(_date2, str):
         _date2 = _time_parser.parse(_date2)
@@ -176,9 +168,7 @@ def get_time_diff(_date1=None, _date2=None, verbose=False):
             )
         _date2 = _date2.astimezone(_pytz.timezone("UTC"))
         if verbose:
-            logger["WARNING"].logger.warning(
-                "Converted 2nd Date: {}".format(_date2.ctime())
-            )
+            logger["WARNING"].logger.warning("Converted 2nd Date: {}".format(_date2.ctime()))
 
     elif "datetime" in str(type(_date2)):
         _date2 = _time_parser.parse(_date2.ctime())
@@ -190,14 +180,10 @@ def get_time_diff(_date1=None, _date2=None, verbose=False):
             )
         _date2 = _date2.astimezone(_pytz.timezone("UTC"))
         if verbose:
-            logger["WARNING"].logger.warning(
-                "Converted 2nd Date: {}".format(_date2.ctime())
-            )
+            logger["WARNING"].logger.warning("Converted 2nd Date: {}".format(_date2.ctime()))
 
     else:
-        logger["ERROR"].logger.error(
-            "Date should either be a <str> or <datetime> object. Please recheck!!"
-        )
+        logger["ERROR"].logger.error("Date should either be a <str> or <datetime> object. Please recheck!!")
 
     if _date1 < _date2:
         diff = _date2 - _date1
