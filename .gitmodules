@@ -1,4 +1,4 @@
 [submodule "logger"]
 	path = logger
-	url = https://sudheer22kumar@dev.azure.com/sudheer22kumar/logger/_git/logger
+	url = https://github.com/sudheer22kumar/logger.git
 	branch = master
