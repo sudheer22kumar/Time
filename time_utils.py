@@ -96,6 +96,7 @@ def get_date(_date=None, timezone=None, format_="HR", just_result=False):
             return _time_parser.parse(result.date + "/" + result.time).isoformat()
         if "epoch" in format_.lower():
             return req_date.timestamp()
+        return None
     else:
         return result
 
@@ -206,7 +207,7 @@ def isdate(date):
 
 def track_pro(day_pro, today=get_date(), profit=0.0):
     if today not in day_pro.keys():
-        day_pro = {today: 0}
+        day_pro = {today: 0.0}
     else:
         pass
     day_pro[today] = day_pro[today] + profit
